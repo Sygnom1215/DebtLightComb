@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using SoundType;
+using UI.Type;
 public class Sound : MonoBehaviour
 {
     //기본적으로 조정할 오디오믹서. 그룹으로 eff와 bgm을 나누어 놔야 함
@@ -48,9 +48,9 @@ public class Sound : MonoBehaviour
     {
         //사용 예시
         if (Input.GetKeyDown(KeyCode.E))
-            PlayEff(SoundType.EffType.Example);
+            PlayEff(EffType.Example);
         if (Input.GetKeyDown(KeyCode.R))
-            PlayBgm(SoundType.BgmType.Example);
+            PlayBgm(BgmType.Example);
     }
     private void SetAddListener()
     {
@@ -117,14 +117,14 @@ public class Sound : MonoBehaviour
         }
 
     }
-    public void PlayBgm(SoundType.BgmType value)
+    public void PlayBgm(BgmType value)
     {
         Debug.Log("play Bgm");
         lastPlayBgm?.Stop();
         SoundsBgm[(int)value].Play();
         lastPlayBgm = SoundsBgm[(int)value];
     }
-    public void PlayEff(SoundType.EffType value)
+    public void PlayEff(EffType value)
     {
         Debug.Log("play eff");
         SoundsEff[(int)value].Play();

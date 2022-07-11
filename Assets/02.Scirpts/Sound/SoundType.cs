@@ -1,4 +1,4 @@
-namespace SoundType
+namespace UI.Type
 {
     public enum EffType
     {
