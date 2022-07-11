@@ -38,4 +38,12 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
         }
     }
+
+    public void ExitGame()
+    {
+        Debug.Log("GameFin");
+        Application.Quit();
+    }
+
+
 }
