@@ -7,6 +7,8 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject menuPanel;
+    [SerializeField]
+    private GameObject backgroundPanel;
 
     private bool isOpenMenu;
 
