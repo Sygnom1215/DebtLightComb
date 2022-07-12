@@ -8,7 +8,8 @@ namespace UI.Type
     public enum BgmType
     {
         //bgm name here
-        Example = 0,
+        MainThema,
+        CutPadol,
 
     }
     public class SoundType
