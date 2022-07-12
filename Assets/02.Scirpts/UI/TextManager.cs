@@ -7,17 +7,26 @@ using UnityEngine.UI;
 public class TextManager : MonoBehaviour
 {
     [SerializeField]
+    private GameObject speechBubble;
+    [SerializeField]
     private Text dialogText;
+    [SerializeField]
+    private List<string> dialogs = new List<string>();
 
-    public string dialog;
-
-    private void Start()
-    {
-        StartTalk();
-    }
+    private int textCount = 0;
 
     public void StartTalk()
     {
-        dialogText.DOText(dialog, dialog.Length * 0.1f);
+        //StartCoroutine(Talk());
+        if (dialogs.Count <= textCount)
+        {
+            Debug.Log("¾ø¾î¿ä");
+            speechBubble.SetActive(false);
+        }
+        dialogText.DOText(dialogs[textCount], 0.1f);
+        textCount++;
+
     }
+
+
 }
