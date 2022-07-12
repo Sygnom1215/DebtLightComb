@@ -692,11 +692,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8399350845353853886, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845353853886, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845420927280, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -732,39 +732,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845623728303, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845623728303, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845623728303, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845901758089, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845901758089, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350845901758089, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350846053285102, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350846053285102, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350846053285102, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350846110742228, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_Pivot.x
@@ -884,19 +884,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8399350846865309752, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350846865309752, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350847015255285, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8399350847015255285, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e608553e0dfb0e54d9754ca17f431023, type: 3}
@@ -1420,7 +1420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1376819777
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1626,10 +1626,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ExitGame
+  m_text: "\uAC8C\uC784 \uC885\uB8CC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5b7e19dc86f23b74595f9deb9593453c, type: 2}
+  m_sharedMaterial: {fileID: -792410915235524262, guid: 5b7e19dc86f23b74595f9deb9593453c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
