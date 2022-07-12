@@ -16,17 +16,16 @@ public class TextManager : MonoBehaviour
     private int textCount = 0;
     private void Awake()
     {
-        speechBubble.GetComponent<Material>();
+        speechBubble.GetComponent<Button>().onClick.AddListener(() => { StartTalk(); });
     }
     public void StartTalk()
     {
-        //StartCoroutine(Talk());
         if (dialogs.Count <= textCount)
         {
             Debug.Log("¾ø¾î¿ä");
             speechBubble.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() => {
                 speechBubble.SetActive(false);
-
+                return;
             });
         }
         dialogText.DOText(dialogs[textCount], 0.1f);

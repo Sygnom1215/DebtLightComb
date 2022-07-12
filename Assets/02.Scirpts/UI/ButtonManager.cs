@@ -9,6 +9,8 @@ public class ButtonManager : MonoBehaviour
     private List<GameObject> activePenels = new List<GameObject>();
     [SerializeField]
     private List<AbstractButton> activeButtons = new List<AbstractButton>();
+    [SerializeField]
+    private GameObject dialogGameObj;
 
     private Stack<UI.Type.EventType.ActivePenelType> activePanelStack = new Stack<UI.Type.EventType.ActivePenelType>();
     private void Awake()
@@ -35,6 +37,9 @@ public class ButtonManager : MonoBehaviour
                         break;
                     case UI.Type.EventType.ButtonEventType.EnterBrush:
                         EnterBrushFunction(button);
+                        break;
+                    case UI.Type.EventType.ButtonEventType.TalkDebtCollector:
+                        TalkDebtCollectorFunction();
                         break;
                     default:
                         Debug.LogWarning("Didn't find Event type");
@@ -71,6 +76,13 @@ public class ButtonManager : MonoBehaviour
                ActiveFunction(button);
                button.DOKill();
            });
+    }
+    private IEnumerator TalkDebtCollectorFunction()
+    {
+        activePenels[(int)UI.Type.EventType.ActivePenelType.DebtTalkPenel].SetActive(true);
+        yield return new WaitForSeconds(2f);
+        activePenels[(int)UI.Type.EventType.ActivePenelType.ChooseFight].SetActive(true);
+
     }
     #endregion
 }

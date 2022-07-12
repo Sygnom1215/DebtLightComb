@@ -8,7 +8,7 @@ namespace UI.Type
             Active,
             Exit,
             EnterBrush, //빗 미니게임 진입
-            TalkDebtCollector, //전투.
+            TalkDebtCollector, //전투 전 대화
         }
         public enum ActivePenelType
         {
