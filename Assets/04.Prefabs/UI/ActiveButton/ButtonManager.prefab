@@ -43,11 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 521fbeb28226e1d4a8782d98b09304b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activePenels:
-  - {fileID: 0}
-  - {fileID: 0}
-  activeButtons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  activePenels: []
+  activeButtons: []

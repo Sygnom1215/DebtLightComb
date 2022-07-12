@@ -6,11 +6,13 @@ namespace UI.Type
         {
             Undo,
             Active,
+            Exit,
+            EnterBrush //빗 미니게임 진입
         }
         public enum ActivePenelType
         {
             Setting,
-            Example,
+            BrushMiniGame,
         }
     }
 }
