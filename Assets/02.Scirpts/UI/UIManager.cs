@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     {
         Instance = this;
         menuPanel.SetActive(false);
-
+        backgroundPanel.SetActive(false);
     }
 
     public void OpenMenu()
@@ -26,14 +26,24 @@ public class UIManager : MonoBehaviour
         if (isOpenMenu == false)
         {
             menuPanel.SetActive(true);
+            backgroundPanel.SetActive(true);
             isOpenMenu = true;
             Time.timeScale = 0;
         }
         else if (isOpenMenu == true)
         {
             menuPanel.SetActive(false);
+            backgroundPanel.SetActive(false);
             isOpenMenu = false;
             Time.timeScale = 1;
         }
     }
+
+    public void ExitGame()
+    {
+        Debug.Log("GameFin");
+        Application.Quit();
+    }
+
+
 }
