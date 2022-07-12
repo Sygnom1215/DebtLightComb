@@ -14,6 +14,8 @@ namespace UI.Type
         {
             Setting,
             BrushMiniGame,
+            DebtTalkPenel,
+            ChooseFight, //사채업자와 싸울지 결정
         }
     }
 }
