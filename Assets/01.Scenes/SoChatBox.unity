@@ -235,18 +235,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ee4e10e3f825d44b4c2547bdcf632e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speechBubble: {fileID: 2090483276}
   dialogText: {fileID: 1365293798}
-  dialog:
-  - HelloWorld
+  dialogs:
   - "\uC548\uB155 \uB9C8\uBC95\uC0AC\uC57C"
-  - "\uB098\uC5D0\uAC8C \uBE57\uC9C8\uC744 \uD574\uC918"
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "\uBE57\uC73C\uB85C \uB0A0 \uBE57\uACA8\uC918"
+  - "\uADF8\uB7FC \uB0B4\uAC00 \uB3C8\uC744 \uC904\uAC8C ?"
 --- !u!4 &937363714
 Transform:
   m_ObjectHideFlags: 0
@@ -588,7 +582,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2090483279}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 937363713}
+        m_TargetAssemblyTypeName: TextManager, Assembly-CSharp
+        m_MethodName: StartTalk
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2090483279
 MonoBehaviour:
   m_ObjectHideFlags: 0
