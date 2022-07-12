@@ -14,14 +14,20 @@ public class TextManager : MonoBehaviour
     private List<string> dialogs = new List<string>();
 
     private int textCount = 0;
-
+    private void Awake()
+    {
+        speechBubble.GetComponent<Material>();
+    }
     public void StartTalk()
     {
         //StartCoroutine(Talk());
         if (dialogs.Count <= textCount)
         {
             Debug.Log("¾ø¾î¿ä");
-            speechBubble.SetActive(false);
+            speechBubble.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() => {
+                speechBubble.SetActive(false);
+
+            });
         }
         dialogText.DOText(dialogs[textCount], 0.1f);
         textCount++;
