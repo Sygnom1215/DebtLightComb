@@ -50,7 +50,7 @@ public class Sound : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
             PlayEff(EffType.Example);
         if (Input.GetKeyDown(KeyCode.R))
-            PlayBgm(BgmType.Example);
+            PlayBgm(BgmType.MainThema);
     }
     private void SetAddListener()
     {
