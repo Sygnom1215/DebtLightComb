@@ -12,7 +12,7 @@ public class CatEmotion : MonoBehaviour
     [SerializeField]
     private Sprite[] sprite = null;
 
-    private int condition; // 0~10    0~3 : GOOD    4~8 : BAD   9~10 : MAD 
+    private int condition; // 0~10    0~4 : GOOD    5~8 : BAD   9~10 : MAD 
     private float randomDelay;
 
     private void Start()
@@ -41,7 +41,7 @@ public class CatEmotion : MonoBehaviour
 
             if (condition >= 9)
                 image.sprite = sprite[0];
-            else if (condition >= 4)
+            else if (condition >= 5)
                 image.sprite = sprite[1];
             else if (condition >= 0)
                 image.sprite = sprite[2];
