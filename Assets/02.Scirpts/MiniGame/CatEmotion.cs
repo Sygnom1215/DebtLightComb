@@ -23,28 +23,32 @@ public class CatEmotion : MonoBehaviour
 
     private IEnumerator Condition()
     {
-        int changeNum = 0;
-        changeNum = Random.Range(-5, 5);
+        while (true)
+        {
+            int changeNum = 0;
+            changeNum = Random.Range(-5, 5);
 
-        if (changeNum == 0)
-            changeNum = 1;
+            if (changeNum == 0)
+                changeNum = 1;
 
-        condition += changeNum;
+            condition += changeNum;
 
-        if (condition < 0)
-            condition = 0;
-        else if (condition > 10)
-            condition = 10;
+            if (condition < 0)
+                condition = 0;
+            else if (condition > 10)
+                condition = 10;
 
 
-        if (condition >= 0 || condition <= 3)
-            image.sprite = sprite[0];
-        else if (condition >= 4 || condition <= 8)
-            image.sprite = sprite[1];
-        else if (condition >= 9 || condition <= 10)
-            image.sprite = sprite[2];
+            if (condition >= 9)
+                image.sprite = sprite[0];
+            else if (condition >= 4)
+                image.sprite = sprite[1];
+            else if (condition >= 0)
+                image.sprite = sprite[2];
 
-        yield return new WaitForSeconds(Random.Range(1.0f, 3.0f));
+            yield return new WaitForSeconds(Random.Range(0.1f, 0.7f));
+        }
+
 
     }
 }
