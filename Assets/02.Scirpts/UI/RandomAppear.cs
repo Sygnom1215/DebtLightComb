@@ -31,14 +31,14 @@ public class RandomAppear : MonoBehaviour
         while (true)
         {
             catBox.GetComponent<Image>().DOFade(1, 0.3f);
-            bubble.GetComponent<Image>().DOFade(1, 0.3f);
-            bubbleText.DOFade(1, 0.3f);
+            bubble.GetComponent<Image>().DOFade(1, 0.7f);
+            bubbleText.DOFade(1, 0.7f);
             yield return new WaitForSeconds(Random.Range(5.0f, 7.0f));
 
 
             catBox.GetComponent<Image>().DOFade(0, 0.3f);
-            bubble.GetComponent<Image>().DOFade(0, 0.3f);
-            bubbleText.DOFade(0, 0.3f);
+            bubble.GetComponent<Image>().DOFade(0, 0.7f);
+            bubbleText.DOFade(0, 0.7f);
             yield return new WaitForSeconds(Random.Range(30f, 40f));
         }
     }
