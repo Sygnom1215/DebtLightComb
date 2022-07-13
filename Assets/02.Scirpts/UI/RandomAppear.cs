@@ -1,39 +1,45 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomAppear : MonoBehaviour
 {
 
     [SerializeField]
     private GameObject catBox;
+    [SerializeField]
+    private GameObject bubble;
+    [SerializeField]
+    private Text bubbleText;
 
-    private bool isAppear;
+    private Image image;
 
-    void Start()
+    IEnumerator Start()
     {
-        catBox.SetActive(false);
-        isAppear = false;
+
+        //catBox.SetActive(false);
+        catBox.GetComponent<Image>().DOFade(0, 0f);
+        bubble.GetComponent<Image>().DOFade(0, 0f);
+        bubbleText.DOFade(0, 0f);
+        yield return new WaitForSeconds(Random.Range(3.0f, 7.0f)); // ±â´Ù·Á
+        StartCoroutine(Appear());
     }
-    void Update()
+    private IEnumerator Appear()
     {
-        //StartCoroutine(Appear());
-        if (isAppear == false)
-            Invoke("AppearCat", Random.Range(5.0f, 17.0f));
+        while (true)
+        {
+            catBox.GetComponent<Image>().DOFade(1, 0.3f);
+            bubble.GetComponent<Image>().DOFade(1, 0.3f);
+            bubbleText.DOFade(1, 0.3f);
+            yield return new WaitForSeconds(Random.Range(5.0f, 7.0f));
 
 
-    }
-
-    //private IEnumerator Appear()
-    //{
-    //    catBox.SetActive(true);
-    //    yield return new WaitForSeconds(Random.Range(5.0f, 17.0f));
-    //    catBox.SetActive(false);
-    //}
-
-    private void AppearCat()
-    {
-        catBox.SetActive(true);
-        isAppear = true;
+            catBox.GetComponent<Image>().DOFade(0, 0.3f);
+            bubble.GetComponent<Image>().DOFade(0, 0.3f);
+            bubbleText.DOFade(0, 0.3f);
+            yield return new WaitForSeconds(Random.Range(30f, 40f));
+        }
     }
 }
