@@ -10,29 +10,31 @@ public class TextManager : MonoBehaviour
     private GameObject speechBubble;
     [SerializeField]
     private Text dialogText;
-    [SerializeField]
     private List<string> dialogs = new List<string>();
 
     private int textCount = 0;
     private void Awake()
     {
-        speechBubble.GetComponent<Material>();
+        speechBubble.GetComponent<Button>().onClick.AddListener(() => { StartTalk(); });
     }
-    public void StartTalk()
+    public void InitDialog(List<string> dialog)
     {
-        //StartCoroutine(Talk());
+        dialogs.Clear();
+        dialogs = dialog;
+        StartTalk();
+    }
+    private void StartTalk()
+    {
         if (dialogs.Count <= textCount)
         {
             Debug.Log("¾ø¾î¿ä");
             speechBubble.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() => {
                 speechBubble.SetActive(false);
-
+                return;
             });
         }
+
         dialogText.DOText(dialogs[textCount], 0.1f);
         textCount++;
-
     }
-
-
 }
