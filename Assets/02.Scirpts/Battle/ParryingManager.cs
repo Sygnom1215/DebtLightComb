@@ -13,30 +13,10 @@ public class ParryingManager : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     private Button parringButton;
     [SerializeField]
     private Image durationImage;
+    [SerializeField]
+    private GameObject blockObj;
     //private float initTimer = 0f;
     //private float timer = 0f;
-    private IEnumerator CoolTime()
-    {
-        battleSO.isParryingCool = true;
-        yield return new WaitForSeconds(5f);
-        battleSO.isParryingCool = false;
-        durationImage.fillAmount = 1f;
-    }
-
-    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-    {
-        Debug.Log("´©¸§");
-        if (battleSO.isParryingCool) return;
-        battleSO.isParrig = true;
-    }
-
-    void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
-    {
-        Debug.Log("¶À");
-        if (battleSO.isParryingCool) return;
-        battleSO.isParrig = false;
-    }
-
     private void Update()
     {
         if (battleSO.isParrig)
@@ -49,22 +29,45 @@ public class ParryingManager : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
 
     }
+
+    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
+    {
+        Debug.Log("´©¸§");
+        //if (battleSO.isParryingCool) return;
+        coolImage.fillAmount = 0f;
+        battleSO.isParrig = true;
+    }
+
+    void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
+    {
+        Debug.Log("¶À");
+        battleSO.isParrig = false;
+        //durationImage.fillAmount = 1f;
+    }
+
     private void ParryingCoolUiSet()
     {
-        if (durationImage.fillAmount <= 0)
+        //if (coolImage.fillAmount == 1) return;
+        if (coolImage.fillAmount >= 1)
         {
-            coolImage.fillAmount = 0f;
+            blockObj.SetActive(false);
+            coolImage.fillAmount = 1f;
+            battleSO.isParryingCool = false;
+            durationImage.fillAmount = 1f;
+            return;
         }
-        coolImage.fillAmount -= 0.00333333333f;
+            blockObj.SetActive(true);
+            durationImage.fillAmount = 0f;
+        coolImage.fillAmount += 0.0045f;
     }
     private void ParryingUiSet()
     {
-        if (battleSO.isParryingCool) return;
+        //if (battleSO.isParryingCool) return;
         if (durationImage.fillAmount <= 0)
         {
-            StartCoroutine(CoolTime());
+            battleSO.isParryingCool = true;
+            battleSO.isParrig = false;
         }
         durationImage.fillAmount -= 0.05f;
-
     }
 }
