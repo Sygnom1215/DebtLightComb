@@ -16,6 +16,8 @@ namespace UI.Type
             BrushMiniGame,
             DebtTalkPenel,
             ChooseFight, //사채업자와 싸울지 결정
+            PayDebt, //돈 지불 패널
+            Fight, //전투
         }
     }
 }

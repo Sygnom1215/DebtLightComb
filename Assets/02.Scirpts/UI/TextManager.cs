@@ -10,7 +10,6 @@ public class TextManager : MonoBehaviour
     private GameObject speechBubble;
     [SerializeField]
     private Text dialogText;
-    [SerializeField]
     private List<string> dialogs = new List<string>();
 
     private int textCount = 0;
@@ -18,7 +17,13 @@ public class TextManager : MonoBehaviour
     {
         speechBubble.GetComponent<Button>().onClick.AddListener(() => { StartTalk(); });
     }
-    public void StartTalk()
+    public void InitDialog(List<string> dialog)
+    {
+        dialogs.Clear();
+        dialogs = dialog;
+        StartTalk();
+    }
+    private void StartTalk()
     {
         if (dialogs.Count <= textCount)
         {
@@ -28,10 +33,8 @@ public class TextManager : MonoBehaviour
                 return;
             });
         }
+
         dialogText.DOText(dialogs[textCount], 0.1f);
         textCount++;
-
     }
-
-
 }
