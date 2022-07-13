@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class TextManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,7 +14,7 @@ public class TextManager : MonoBehaviour
     private int textCount = 0;
     private void Awake()
     {
-        speechBubble.GetComponent<Button>().onClick.AddListener(() => { StartTalk(); });
+        //speechBubble.GetComponent<Button>().onClick.AddListener(() => { StartTalk(); });
     }
     public void InitDialog(List<string> dialog)
     {
@@ -28,7 +27,8 @@ public class TextManager : MonoBehaviour
         if (dialogs.Count <= textCount)
         {
             Debug.Log("¾ø¾î¿ä");
-            speechBubble.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() => {
+            speechBubble.GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() =>
+            {
                 speechBubble.SetActive(false);
                 return;
             });
@@ -38,3 +38,4 @@ public class TextManager : MonoBehaviour
         textCount++;
     }
 }
+
