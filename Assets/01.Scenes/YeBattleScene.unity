@@ -3605,7 +3605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1367925873
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4930,7 +4930,7 @@ GameObject:
   - component: {fileID: 1784227652}
   - component: {fileID: 1784227651}
   m_Layer: 5
-  m_Name: Answer 1
+  m_Name: VefiNumButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5884,6 +5884,14 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
+      propertyPath: playerSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 59c7bf5b7c083c5479761da312fb7bbb, type: 2}
+    - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
+      propertyPath: description
+      value: 
+      objectReference: {fileID: 1898979862}
+    - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: textManager
       value: 
       objectReference: {fileID: 1764926452}
@@ -5892,12 +5900,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1614928357}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
+      propertyPath: payInputField
+      value: 
+      objectReference: {fileID: 467571159}
+    - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: activePenels.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: activeButtons.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: activePenels.Array.data[0]
@@ -5951,6 +5963,10 @@ PrefabInstance:
       propertyPath: activeButtons.Array.data[6]
       value: 
       objectReference: {fileID: 1588061853}
+    - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
+      propertyPath: activeButtons.Array.data[7]
+      value: 
+      objectReference: {fileID: 1784227651}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
 --- !u!1001 &7990268419334013783

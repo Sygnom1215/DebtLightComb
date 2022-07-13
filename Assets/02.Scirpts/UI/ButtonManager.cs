@@ -16,6 +16,8 @@ public class ButtonManager : MonoBehaviour
     private PlayerSO playerSO;
     [SerializeField]
     private TMP_InputField payInputField;
+    [SerializeField]
+    private TMP_Text description;
     private Stack<UI.Type.EventType.ActivePenelType> activePanelStack = new Stack<UI.Type.EventType.ActivePenelType>();
     private void Awake()
     {
@@ -57,7 +59,7 @@ public class ButtonManager : MonoBehaviour
     }
     private void RemoveAllPenel()
     {
-        while (activePanelStack.Count != 0)
+        for (int i = 0; i < 2; i++)
         {
             UndoFunction();
         }
@@ -105,24 +107,25 @@ public class ButtonManager : MonoBehaviour
         dialog.Add("서로 좋게좋게 끝내자고");
         textManager.InitDialog(dialog);
         yield return new WaitForSeconds(5f);
+        description.text = $"현재 빚\n({playerSO.money*-1}골드)에서\n\n\n골드 만큼의 원금을\n상환합니다.";
         activePenels[(int)UI.Type.EventType.ActivePenelType.ChooseFight].SetActive(true);
 
     }
     private void VerifiNumFunction()
     {
-        int pay = int.Parse(payInputField.text);
-        if (pay <= playerSO.money * -1 || pay > 0)
-        {
-            playerSO.money += pay;
-            RemoveAllPenel();
-        }
-        else if (pay == 0)
+        long pay = long.Parse(payInputField.text);
+        if (pay == 0)
         {
             List<string> dialog = new List<string>();
             dialog.Add("지금 나랑 장난하는거야?");
             dialog.Add("이 일은 나중에 그대로 값아야 할거다!");
             textManager.InitDialog(dialog);
             playerSO.money -= 150000;
+            RemoveAllPenel();
+        }
+        else if (pay <= playerSO.money * -1 || pay > 0)
+        {
+            playerSO.money += pay;
             RemoveAllPenel();
         }
         else
