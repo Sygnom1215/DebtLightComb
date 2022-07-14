@@ -8,8 +8,10 @@ public class ButtonManager : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> activePenels = new List<GameObject>();
+    public List<GameObject>ActivePenels{ get { return activePenels; } set { value = activePenels; } }
     [SerializeField]
     private List<AbstractButton> activeButtons = new List<AbstractButton>();
+    public List<AbstractButton>ActiveButtons { get { return activeButtons; } set { value = activeButtons; } }
     [SerializeField]
     private TextManager textManager;
     [SerializeField]
@@ -18,6 +20,8 @@ public class ButtonManager : MonoBehaviour
     private TMP_InputField payInputField;
     [SerializeField]
     private TMP_Text description;
+    [SerializeField]
+    private Text bubble;
     private Stack<UI.Type.EventType.ActivePenelType> activePanelStack = new Stack<UI.Type.EventType.ActivePenelType>();
     private void Awake()
     {
@@ -61,7 +65,7 @@ public class ButtonManager : MonoBehaviour
         }
     }
     #region 버튼 함수들
-    private void UndoFunction()
+    public void UndoFunction()
     {
         activePenels[(int)activePanelStack.Peek()].SetActive(false);
         activePanelStack.Pop();
@@ -92,7 +96,15 @@ public class ButtonManager : MonoBehaviour
     private void ComeDebtFunction(AbstractButton button)
     {
         if (playerSO.isComeDebtCollecter)
+        {
+            var lastTalkButton = activeButtons[4].GetComponent<Button>();
+            lastTalkButton.onClick.RemoveAllListeners();
+            lastTalkButton.onClick.AddListener(() =>
+            {
+                TalkDebtCollectorFunction();
+            });
             ActiveFunction(button);
+        }
     }
     private void TalkDebtCollectorFunction()
     {
@@ -101,6 +113,7 @@ public class ButtonManager : MonoBehaviour
     private IEnumerator Talk()
     {
         var talk = activePenels[(int)UI.Type.EventType.ActivePenelType.DebtTalkPenel];
+        bubble.text = "";
         talk.SetActive(true);
         List<string> dialog = new List<string>();
         dialog.Add("돈 받으러 왔다.");

@@ -68,6 +68,6 @@ public class ParryingManager : MonoBehaviour, IPointerDownHandler, IPointerUpHan
             battleSO.isParryingCool = true;
             battleSO.isParrig = false;
         }
-        durationImage.fillAmount -= 0.05f;
+        durationImage.fillAmount -= 0.02f;
     }
 }

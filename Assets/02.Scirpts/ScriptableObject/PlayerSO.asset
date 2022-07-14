@@ -15,6 +15,6 @@ MonoBehaviour:
   money: -15400000000
   paidBackMoney: 0
   tower: -50
-  isComeDebtCollecter: 0
+  isComeDebtCollecter: 1
   hp: 15
   damage: 4

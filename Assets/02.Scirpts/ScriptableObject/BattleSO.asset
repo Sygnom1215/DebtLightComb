@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isParryingCool: 0
   isParrig: 0
-  hp: -1338
-  damage: 5
+  hp: 20
+  damage: 3
