@@ -44,6 +44,9 @@ public class ButtonManager : MonoBehaviour
                     case UI.Type.EventType.ButtonEventType.EnterBrush:
                         EnterBrushFunction(button);
                         break;
+                    case UI.Type.EventType.ButtonEventType.ComeDebt:
+                        ComeDebtFunction(button);
+                        break;
                     case UI.Type.EventType.ButtonEventType.TalkDebtCollector:
                         TalkDebtCollectorFunction();
                         break;
@@ -59,7 +62,7 @@ public class ButtonManager : MonoBehaviour
     }
     private void RemoveAllPenel()
     {
-        for (int i = 0; i < 2; i++)
+        while (activePanelStack.Count != 0)
         {
             UndoFunction();
         }
@@ -93,6 +96,11 @@ public class ButtonManager : MonoBehaviour
                button.DOKill();
            });
     }
+    private void ComeDebtFunction(AbstractButton button)
+    {
+        if (playerSO.isComeDebtCollecter)
+            ActiveFunction(button);
+    }
     private void TalkDebtCollectorFunction()
     {
         StartCoroutine(Talk());
@@ -107,31 +115,54 @@ public class ButtonManager : MonoBehaviour
         dialog.Add("서로 좋게좋게 끝내자고");
         textManager.InitDialog(dialog);
         yield return new WaitForSeconds(5f);
-        description.text = $"현재 빚\n({playerSO.money*-1}골드)에서\n\n\n골드 만큼의 원금을\n상환합니다.";
+        description.text = $"현재 빚\n({playerSO.money * -1}골드)에서\n\n\n골드 만큼의 원금을\n상환합니다.";
         activePenels[(int)UI.Type.EventType.ActivePenelType.ChooseFight].SetActive(true);
-
+        activePanelStack.Push(UI.Type.EventType.ActivePenelType.ChooseFight);
     }
     private void VerifiNumFunction()
     {
         long pay = long.Parse(payInputField.text);
+        var lastTalkButton = activeButtons[4].GetComponent<Button>();
+        lastTalkButton.onClick.RemoveAllListeners();
+            var talk = activePenels[(int)UI.Type.EventType.ActivePenelType.DebtTalkPenel];
+            List<string> dialog = new List<string>();
         if (pay == 0)
         {
-            List<string> dialog = new List<string>();
-            dialog.Add("지금 나랑 장난하는거야?");
-            dialog.Add("이 일은 나중에 그대로 값아야 할거다!");
-            textManager.InitDialog(dialog);
             playerSO.money -= 150000;
-            RemoveAllPenel();
+            UndoFunction();
+            UndoFunction();
+            talk.SetActive(true);
+            talk.GetComponent<Image>().DOFade(1, 0.5f);
+            dialog.Add("이 일은 나중에 배로 값아야 할거다!");
+            textManager.textCount = 0;
+            textManager.InitDialog(dialog);
+            lastTalkButton.onClick.AddListener(() =>
+            {
+            UndoFunction();
+            });
+            playerSO.isComeDebtCollecter = false;
         }
-        else if (pay <= playerSO.money * -1 || pay > 0)
+        else if (pay <= playerSO.money * -1 && pay > 0)
         {
             playerSO.money += pay;
-            RemoveAllPenel();
+            UndoFunction();
+            UndoFunction();
+            talk.SetActive(true);
+            talk.GetComponent<Image>().DOFade(1, 0.5f);
+            dialog.Add("다음에 보자고!");
+            textManager.textCount = 0;
+            textManager.InitDialog(dialog);
+            lastTalkButton.onClick.AddListener(() =>
+            {
+                UndoFunction();
+            });
+            playerSO.isComeDebtCollecter = false;
         }
         else
         {
             payInputField.text = "";
         }
     }
+
     #endregion
 }

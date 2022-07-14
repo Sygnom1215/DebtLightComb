@@ -8,5 +8,6 @@ public class PlayerSO : ScriptableObject
     public long money = -15400000000;
     public long paidBackMoney = 0;
     public sbyte tower = -50;
+    public bool isComeDebtCollecter = false;
     //public long defaultMoney = -15400000000;
 }

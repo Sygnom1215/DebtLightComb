@@ -10,11 +10,11 @@ public class TextManager : MonoBehaviour
     [SerializeField]
     private Text dialogText;
     private List<string> dialogs = new List<string>();
+    public int textCount = 0;
 
-    private int textCount = 0;
-    private void Awake()
+    private void OnEnable()
     {
-        //speechBubble.GetComponent<Button>().onClick.AddListener(() => { StartTalk(); });
+        speechBubble.SetActive(true);
     }
     public void InitDialog(List<string> dialog)
     {
