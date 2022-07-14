@@ -17,10 +17,10 @@ public class DebtPayEventManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(10f, 20f));
             Debug.Log("Debt collecter is comming");
             sound.PlayEff(EffType.Knok);
             playerSO.isComeDebtCollecter = true;
+            yield return new WaitForSeconds(Random.Range(10f, 20f));
         }
     }
 }
