@@ -40,7 +40,7 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
 
 
         //}
-        if (totalTime >= 30f)
+        if (totalTime >= 5f)
         {
             stisPanel.SetActive(true);
         }
