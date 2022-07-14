@@ -58,7 +58,7 @@ public class ParryingManager : MonoBehaviour, IPointerDownHandler, IPointerUpHan
         }
             blockObj.SetActive(true);
             durationImage.fillAmount = 0f;
-        coolImage.fillAmount += 0.0045f;
+        coolImage.fillAmount += 0.0065f;
     }
     private void ParryingUiSet()
     {

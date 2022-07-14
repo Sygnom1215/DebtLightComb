@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0de63c742b5152408fc0545f03cc14e, type: 3}
   m_Name: PlayerSO
   m_EditorClassIdentifier: 
-  money: -15399999990
+  money: -15400000000
   paidBackMoney: 0
   tower: -50
   isComeDebtCollecter: 0
+  hp: 15
+  damage: 4
