@@ -43,14 +43,15 @@ public class Sound : MonoBehaviour
     {
         SetSource();
         SetAddListener();
+        PlayBgm(BgmType.MainThema);
     }
     private void Update()
     {
         //사용 예시
-        if (Input.GetKeyDown(KeyCode.E))
-            PlayEff(EffType.Example);
-        if (Input.GetKeyDown(KeyCode.R))
-            PlayBgm(BgmType.MainThema);
+        //if (Input.GetKeyDown(KeyCode.E))
+        //    PlayEff(EffType.Example);
+        //if (Input.GetKeyDown(KeyCode.R))
+        //    PlayBgm(BgmType.MainThema);
     }
     private void SetAddListener()
     {

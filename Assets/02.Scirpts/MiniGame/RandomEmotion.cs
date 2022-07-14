@@ -13,17 +13,21 @@ public class RandomEmotion : MonoBehaviour
     private BattleSO battleSO;
     [SerializeField]
     private BattleManager battleManager;
+    [SerializeField]
+    private Sound sound;
     private int condition; // 0~10    0~5 : GOOD    6~8 : BAD   10 : MAD 
     private float randomDelay;
 
     [SerializeField]
     private bool isFight = false;
-    private void Start()
+    private void Awake()
     {
         image.sprite = sprite[2];
+    }
+    private void OnEnable()
+    {
         StartCoroutine(Condition());
     }
-
     private IEnumerator Condition()
     {
         while (true)
@@ -72,6 +76,8 @@ public class RandomEmotion : MonoBehaviour
                 {
                     Time.timeScale = 0.8f;
                     //È¿°úÀ½
+                    sound.PlayEff(UI.Type.EffType.Parrying);
+
                     battleSO.hp -= 6;
                     yield return new WaitForSeconds(0.1f);
                     Time.timeScale = 1f;

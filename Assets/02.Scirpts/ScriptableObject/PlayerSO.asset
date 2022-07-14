@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: -15400000000
   paidBackMoney: 0
-  tower: -50
-  isComeDebtCollecter: 1
+  tower: -30
+  isComeDebtCollecter: 0
   hp: 15
   damage: 4

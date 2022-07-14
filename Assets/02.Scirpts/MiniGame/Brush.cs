@@ -14,6 +14,10 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
     private MiniGameSO miniGameSO;
     [SerializeField]
     private Transform backTransform;
+    [SerializeField]
+    private Sound sound;
+    [SerializeField]
+    private PlayerSO playerSO;
     private float dragTime = 0f;
     private float totalTime = 0f;
 
@@ -23,6 +27,7 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
     private void Start()
     {
         stisPanel.SetActive(false);
+        sound.PlayBgm(UI.Type.BgmType.CutPadol);
     }
     private void Update()
     {
@@ -43,6 +48,9 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
         if (totalTime >= 5f)
         {
             stisPanel.SetActive(true);
+            sound.PlayBgm(UI.Type.BgmType.MainThema);
+            playerSO.money += 50000;
+            playerSO.tower++;
         }
     }
 

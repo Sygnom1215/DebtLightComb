@@ -3,7 +3,9 @@ namespace UI.Type
     public enum EffType
     {
         //eff name here
-        Example = 0,
+        Knok,
+        DefaultAttack,
+        Parrying,
     }
     public enum BgmType
     {

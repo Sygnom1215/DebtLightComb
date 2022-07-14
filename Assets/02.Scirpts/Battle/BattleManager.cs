@@ -23,6 +23,8 @@ public class BattleManager : MonoBehaviour
     private TextManager textManager;
     [SerializeField]
     private ButtonManager buttonManager;
+    [SerializeField]
+    private Sound sound;
     private int initPlayerHP;
     private int initEnemyHP;
     private bool isAttackCoolTime = false;
@@ -54,6 +56,7 @@ public class BattleManager : MonoBehaviour
             dialog.Add("≈©¿π! ¿Ã ∫Ò∞Ã«— ≥‡ºÆ!");
             playerSO.hp = initPlayerHP;
             battleSO.hp = initEnemyHP;
+            playerSO.money += 50000;
         }
         if (playerSO.hp <= 0)
         {
@@ -73,6 +76,7 @@ public class BattleManager : MonoBehaviour
     {
         if (isAttackCoolTime) return;
         cameraTransform.DOKill();
+        sound.PlayEff(UI.Type.EffType.DefaultAttack);
         battleSO.hp -= playerSO.damage;
         Color color;
         ColorUtility.TryParseHtmlString("#FFBDBD", out color);
