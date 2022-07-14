@@ -124,11 +124,10 @@ public class ButtonManager : MonoBehaviour
         long pay = long.Parse(payInputField.text);
         var lastTalkButton = activeButtons[4].GetComponent<Button>();
         lastTalkButton.onClick.RemoveAllListeners();
-            var talk = activePenels[(int)UI.Type.EventType.ActivePenelType.DebtTalkPenel];
-            List<string> dialog = new List<string>();
+        var talk = activePenels[(int)UI.Type.EventType.ActivePenelType.DebtTalkPenel];
+        List<string> dialog = new List<string>();
         if (pay == 0)
         {
-            playerSO.money -= 150000;
             UndoFunction();
             UndoFunction();
             talk.SetActive(true);
@@ -136,15 +135,17 @@ public class ButtonManager : MonoBehaviour
             dialog.Add("이 일은 나중에 배로 값아야 할거다!");
             textManager.textCount = 0;
             textManager.InitDialog(dialog);
+            playerSO.money -= 150000;
             lastTalkButton.onClick.AddListener(() =>
             {
-            UndoFunction();
+                UndoFunction();
             });
             playerSO.isComeDebtCollecter = false;
         }
-        else if (pay <= playerSO.money * -1 && pay > 0)
+        else if (pay <= (15400000000 + playerSO.money+playerSO.paidBackMoney) && pay > 0)
         {
-            playerSO.money += pay;
+            playerSO.money -= pay;
+            playerSO.paidBackMoney += pay;
             UndoFunction();
             UndoFunction();
             talk.SetActive(true);

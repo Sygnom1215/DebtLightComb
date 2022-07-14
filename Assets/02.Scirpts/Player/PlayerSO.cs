@@ -9,5 +9,6 @@ public class PlayerSO : ScriptableObject
     public long paidBackMoney = 0;
     public sbyte tower = -50;
     public bool isComeDebtCollecter = false;
-    //public long defaultMoney = -15400000000;
+    public int hp = 15;
+    public int damage = 4;
 }
