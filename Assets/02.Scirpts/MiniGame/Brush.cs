@@ -15,17 +15,34 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
     [SerializeField]
     private Transform backTransform;
     private float dragTime = 0f;
+    private float totalTime = 0f;
+
+    [SerializeField]
+    private GameObject stisPanel;
+
+    private void Start()
+    {
+        stisPanel.SetActive(false);
+    }
+    private void Update()
+    {
+        JudgeDrag();
+    }
 
     private void JudgeDrag()
     {
-        if (dragTime >= maxDragTime)
+        //if (dragTime >= maxDragTime)
+        //{
+
+        //}
+        //else if (dragTime <= minDragTime) // 한 번 드레그 할 때 걸린 시간
+        //{
+
+
+        //}
+        if (totalTime >= 30f)
         {
-
-        }
-        else if (dragTime <= minDragTime)
-        {
-
-
+            stisPanel.SetActive(true);
         }
     }
 
@@ -40,23 +57,25 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
         transform.position = eventData.position;
         List<RaycastResult> results = new List<RaycastResult>();
         GetComponent<GraphicRaycaster>().Raycast(eventData, results);
-        
-        if (results.Count==1)
+
+        if (results.Count == 1)
             miniGameSO.isComb = true;
         if (miniGameSO.isComb)
         {
-            dragTime+= 0.1f;
+            dragTime += 0.1f;
         }
     }
 
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         Debug.Log(dragTime);
-        JudgeDrag();
         miniGameSO.isComb = false;
+        totalTime += dragTime;
+        JudgeDrag();
         dragTime = 0;
         RectTransform rec = GetComponent<RectTransform>();
         rec.DOScale(1, 0.5f).SetEase(Ease.InOutBack);
-        rec.DOAnchorPos(backTransform.position,0.5f);
+        rec.DOAnchorPos(backTransform.position, 0.5f);
+
     }
 }
