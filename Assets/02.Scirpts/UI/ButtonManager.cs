@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
+
 public class ButtonManager : MonoBehaviour
 {
     [SerializeField]
@@ -73,4 +74,6 @@ public class ButtonManager : MonoBehaviour
            });
     }
     #endregion
+
+
 }
