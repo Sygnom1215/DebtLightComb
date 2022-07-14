@@ -953,9 +953,17 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1032643401037411027, guid: 968629645593d2f43887210b2bd30943, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1310483010210142600, guid: 968629645593d2f43887210b2bd30943, type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013059291476324485, guid: 968629645593d2f43887210b2bd30943, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2013059292170298069, guid: 968629645593d2f43887210b2bd30943, type: 3}
       propertyPath: m_Sprite
@@ -986,6 +994,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2013059292170298071, guid: 968629645593d2f43887210b2bd30943, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013059292170298071, guid: 968629645593d2f43887210b2bd30943, type: 3}
       propertyPath: m_SizeDelta.x
       value: 700
       objectReference: {fileID: 0}
@@ -997,6 +1009,10 @@ PrefabInstance:
       propertyPath: stisPanel
       value: 
       objectReference: {fileID: 1065439683}
+    - target: {fileID: 2013059292508140489, guid: 968629645593d2f43887210b2bd30943, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2013059293179337589, guid: 968629645593d2f43887210b2bd30943, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1814,7 +1830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8791542684964023843, guid: 38e38391f1092ac40adff72c0fed8507, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -346.3
+      value: -101
       objectReference: {fileID: 0}
     - target: {fileID: 8791542684964023843, guid: 38e38391f1092ac40adff72c0fed8507, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2966,7 +2982,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1417433205}
   m_Direction: 0
   m_Value: 1.0000001
-  m_Size: 0.44273108
+  m_Size: 0.5307694
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
