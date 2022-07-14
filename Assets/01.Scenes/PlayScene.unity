@@ -2933,7 +2933,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1417433205}
   m_Direction: 0
   m_Value: 0.99999994
-  m_Size: 0.26538476
+  m_Size: 0.5307694
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3443,7 +3443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: activeButtons.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: activePenels.Array.data[0]
@@ -3513,5 +3513,9 @@ PrefabInstance:
       propertyPath: activeButtons.Array.data[9]
       value: 
       objectReference: {fileID: 716626842}
+    - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
+      propertyPath: activeButtons.Array.data[10]
+      value: 
+      objectReference: {fileID: 131396203}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
