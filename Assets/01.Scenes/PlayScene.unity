@@ -1275,7 +1275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2013059293185452323, guid: 968629645593d2f43887210b2bd30943, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2013059293185452327, guid: 968629645593d2f43887210b2bd30943, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -2270,6 +2270,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055158911}
   m_CullTransparentMesh: 1
+--- !u!114 &1118781653 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5463100994731173992, guid: 982850b8c0ae73d49b3ecf8ff1b7a35c, type: 3}
+  m_PrefabInstance: {fileID: 1314678603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05e25a02bab01314cbbde668a670be58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1158757811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2013059293179337591, guid: 968629645593d2f43887210b2bd30943, type: 3}
@@ -3201,7 +3212,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1417433205}
   m_Direction: 0
   m_Value: 0.0000001424067
-  m_Size: 0.52606994
+  m_Size: 0.26303503
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3701,7 +3712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: activeButtons.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
       propertyPath: activePenels.Array.data[0]
@@ -3735,5 +3746,9 @@ PrefabInstance:
       propertyPath: activeButtons.Array.data[5]
       value: 
       objectReference: {fileID: 1377352268}
+    - target: {fileID: 8163689514621761051, guid: 8a1d7e095d841d24480c979005310fda, type: 3}
+      propertyPath: activeButtons.Array.data[6]
+      value: 
+      objectReference: {fileID: 1118781653}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a1d7e095d841d24480c979005310fda, type: 3}

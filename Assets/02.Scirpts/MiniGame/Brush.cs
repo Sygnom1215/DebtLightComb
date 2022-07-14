@@ -31,16 +31,16 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
 
     private void JudgeDrag()
     {
-        if (dragTime >= maxDragTime)
-        {
+        //if (dragTime >= maxDragTime)
+        //{
 
-        }
-        else if (dragTime <= minDragTime) // 한 번 드레그 할 때 걸린 시간
-        {
+        //}
+        //else if (dragTime <= minDragTime) // 한 번 드레그 할 때 걸린 시간
+        //{
 
 
-        }
-        else if (totalTime >= 5f) // 만약 10초가 되면
+        //}
+        if (totalTime >= 30f)
         {
             stisPanel.SetActive(true);
         }
@@ -69,9 +69,9 @@ public class Brush : MonoBehaviour, IEndDragHandler, IBeginDragHandler, IDragHan
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         Debug.Log(dragTime);
-        JudgeDrag();
         miniGameSO.isComb = false;
         totalTime += dragTime;
+        JudgeDrag();
         dragTime = 0;
         RectTransform rec = GetComponent<RectTransform>();
         rec.DOScale(1, 0.5f).SetEase(Ease.InOutBack);
