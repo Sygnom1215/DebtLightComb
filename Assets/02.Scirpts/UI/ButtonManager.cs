@@ -22,6 +22,8 @@ public class ButtonManager : MonoBehaviour
     private TMP_Text description;
     [SerializeField]
     private Text bubble;
+    [SerializeField]
+    private GameObject nicePanel;
     private Stack<UI.Type.EventType.ActivePenelType> activePanelStack = new Stack<UI.Type.EventType.ActivePenelType>();
     private void Awake()
     {
@@ -74,6 +76,7 @@ public class ButtonManager : MonoBehaviour
     {
         var buttonCom = button.GetComponent<ActiveButton>();
         activePenels[(int)buttonCom.activePenelType].SetActive(true);
+        nicePanel.SetActive(false);
         activePenels[(int)buttonCom.activePenelType].gameObject.transform.DOShakeScale(0.2f, 0.1f);
 
         activePanelStack.Push(buttonCom.activePenelType);
