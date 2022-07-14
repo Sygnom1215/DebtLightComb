@@ -29,8 +29,8 @@ public class Elmatalk : MonoBehaviour
     {
 
 
-        bubble.DOFade(1, 3f);
-        talk.DOText(dialogs[Random.Range(0, dialogs.Count)], 3f);
+        bubble.DOFade(1, 1f);
+        talk.DOText(dialogs[Random.Range(0, dialogs.Count)], 1.5f);
 
         yield return new WaitForSeconds(5f);
         bubble.DOFade(0, 3f);
