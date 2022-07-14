@@ -29,12 +29,12 @@ public class Elmatalk : MonoBehaviour
     {
 
 
-        bubble.DOFade(1, 1f);
-        talk.DOText(dialogs[Random.Range(0, dialogs.Count)], 1f);
+        bubble.DOFade(1, 3f);
+        talk.DOText(dialogs[Random.Range(0, dialogs.Count)], 3f);
 
-        yield return new WaitForSeconds(2f);
-        bubble.DOFade(0, 1f);
-        talk.DOText(" ", 1f);
+        yield return new WaitForSeconds(5f);
+        bubble.DOFade(0, 3f);
+        talk.DOText(" ", 3f);
 
     }
 }
